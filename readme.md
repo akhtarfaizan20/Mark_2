@@ -5,4 +5,5 @@ You just jave to type the option A,B,C or D.
 For the correct answer you will get a 1 mark and for a wrong answer 0.25 will be deducted. 
 At the end you will get the total marks acheived. 
 If you have beaten the high scorer take the screen shot and send me, I will update it ASAP. 
+I have also added the Chalk feature to make it look attractive. 
 Thanks. 
