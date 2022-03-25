@@ -8,8 +8,8 @@ var userName=readlineSync.question("Please Enter Your Name-> ");
 console.log("Welcome "+chalk.blue.bold.underline(userName+'!')+" Are you a "+chalk.white.bgRed.bold("Money Heist")+" Fan?\nHere is a fun quiz about "+chalk.white.bgRed.bold("Money Heist!")+"\n==============================================");
 console.log(chalk.cyan.bold.bgWhite("Marking Rules ->")+" For the correct answer you will get 1 mark and for the wrong answer 0.25 will be deduted from the total marks.\n==============================================\nIt will be an objective type quiz so you have to select an option from A,B,C and D.\n=============================================="); 
 var highScore = {
-  name : "Faizan Akhtar",
-  sc : "0"
+  name : "Aman Raj",
+  sc : "4.5"
 }
 function quiz(ques,A,B,C,D,ans){
   console.log(chalk.cyan.bold.bgWhite("Question:- ")+ques);
@@ -86,15 +86,20 @@ var questions=[{
   ans : "C"
 }
              ];
-
+// loop for questions 
 for(var i=0;i<questions.length;i++){
   //function call
 quiz(questions[i].ques,questions[i].A,questions[i].B,questions[i].C,questions[i].D,questions[i].ans);
 }
 
 // After Quiz Ouputs
-
+// showing the highest scorer.
 console.log("==============================================\n "+chalk.bgWhite.black.bold("HIGHEST SCORER")+"\n Name ->\t"+highScore.name+"\nScore ->\t"+highScore.sc+"\n==============================================");
+//showing the total score 
 console.log(chalk.green.bold.italic.underline.bgWhite("Your Score is -> "+score));
-console.log("Send me the screenshot if you have beaten the high score, I will update it ASAP.")
+//condition to check wheater the player has beaten the highscore or not. 
+if(score>highScore.sc){
+  console.log(chalk.red.bold("Congratulations! You have broke the record and you have acheived the Highest Score!\nSend me the screen shot so that I can update it ASAP."))
+}
+
  
