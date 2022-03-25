@@ -1,26 +1,26 @@
 console.clear();
 var readlineSync = require("readline-sync");
-const chalk = require("chalk");
+var chalk = require('chalk');
 var score = 0;
 // Pre quiz Outputs
-console.log('The Quiz');
-// var userName=readlineSync.question("Please Enter Your Name-> ");
-// console.log("Welcome ${userName}! Are you a Money Heist Fan?\nHere is a fun quiz about Money Heist!\n==============================================");
-console.log("Marking Rules -> For the correct answer you will get 1 mark and for the wrong answer 0.25 will be deduted from the total marks.\n==============================================\nIt will be an objective type quiz so you have to select an option from A,B,C and D.\n=============================================="); 
+console.log(chalk.white.bgRed.bold('Money Heist'));
+var userName=readlineSync.question("Please Enter Your Name-> ");
+console.log("Welcome "+chalk.blue.bold.underline(userName+'!')+" Are you a "+chalk.white.bgRed.bold("Money Heist")+" Fan?\nHere is a fun quiz about "+chalk.white.bgRed.bold("Money Heist!")+"\n==============================================");
+console.log(chalk.cyan.bold.bgWhite("Marking Rules ->")+" For the correct answer you will get 1 mark and for the wrong answer 0.25 will be deduted from the total marks.\n==============================================\nIt will be an objective type quiz so you have to select an option from A,B,C and D.\n=============================================="); 
 var highScore = {
   name : "Faizan Akhtar",
   sc : "0"
 }
 function quiz(ques,A,B,C,D,ans){
-  console.log("Question:- "+ques);
+  console.log(chalk.cyan.bold.bgWhite("Question:- ")+ques);
   console.log("a) "+A+"\nb) "+B);
   console.log("c) "+C+"\nd) "+D);
   var userAnswer = readlineSync.question("Enter your answer -> ");
   if(userAnswer.toUpperCase() === ans){
-    console.log("Congratulations! You are right. You got 1 Mark.");
+    console.log(chalk.green.bold.italic("Congratulations! You are right. You got 1 Mark."));
     score++;
   } else {
-    console.log("Oops! you are wrong, Sorry but I have to deduct 0.25 marks.");
+    console.log(chalk.red.bold("Oops! you are wrong,")+" Sorry but I have to deduct "+chalk.red.bold("0.25 marks."));
     score-=0.25;
   }
   console.log("==============================================");
@@ -75,7 +75,7 @@ var questions=[{
   B : "Maniana",
   C : "Selena",
   D : "Tatiana",
-  ans : "A"
+  ans : "D"
 },
 {
   ques : "Who is the general director of the Royal Mint of Spain? ",
@@ -85,7 +85,6 @@ var questions=[{
   D : "Nairobi",
   ans : "C"
 }
-
              ];
 
 for(var i=0;i<questions.length;i++){
@@ -95,7 +94,7 @@ quiz(questions[i].ques,questions[i].A,questions[i].B,questions[i].C,questions[i]
 
 // After Quiz Ouputs
 
-console.log("==============================================\n HIGHEST SCORER\n Name ->\t"+highScore.name+"\nScore ->\t"+highScore.sc+"\n==============================================")
-console.log("Your Score is -> "+score);
+console.log("==============================================\n "+chalk.bgWhite.black.bold("HIGHEST SCORER")+"\n Name ->\t"+highScore.name+"\nScore ->\t"+highScore.sc+"\n==============================================");
+console.log(chalk.green.bold.italic.underline.bgWhite("Your Score is -> "+score));
 console.log("Send me the screenshot if you have beaten the high score, I will update it ASAP.")
  
