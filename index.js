@@ -1,10 +1,11 @@
+console.clear();
 var readlineSync = require("readline-sync");
-const chalk = import("chalk");
+const chalk = require("chalk");
 var score = 0;
 // Pre quiz Outputs
 console.log('The Quiz');
-var userName=readlineSync.question("Please Enter Your Name-> ");
-console.log("Welcome "+userName+"! Are you a Money Heist Fan?\nHere is a fun quiz about Money Heist!\n==============================================");
+// var userName=readlineSync.question("Please Enter Your Name-> ");
+// console.log("Welcome ${userName}! Are you a Money Heist Fan?\nHere is a fun quiz about Money Heist!\n==============================================");
 console.log("Marking Rules -> For the correct answer you will get 1 mark and for the wrong answer 0.25 will be deduted from the total marks.\n==============================================\nIt will be an objective type quiz so you have to select an option from A,B,C and D.\n=============================================="); 
 var highScore = {
   name : "Faizan Akhtar",
